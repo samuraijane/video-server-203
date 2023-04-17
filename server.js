@@ -3,7 +3,7 @@ const { renderFile } = require('./middleware');
 
 const server = express();
 
-server.use(renderFile);
+// server.use(renderFile);
 
 server.get('/anna', (req, res) => {
   res.send('ANNA with `res.send`');
@@ -26,7 +26,7 @@ server.get('/carlos', (req, res) => {
 // });
 
 // new way
-server.get('/david', (req, res) => {
+server.get('/david', renderFile, (req, res) => {
   res.renderFile('david');
 });
 
