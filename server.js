@@ -1,9 +1,9 @@
 const express = require('express');
-const { renderFile } = require('./middleware');
+const { prepFileToSend } = require('./middleware');
 
 const server = express();
 
-// server.use(renderFile);
+// server.use(prepFileToSend);
 
 server.get('/anna', (req, res) => {
   res.send('ANNA with `res.send`');
@@ -26,8 +26,8 @@ server.get('/carlos', (req, res) => {
 // });
 
 // new way
-server.get('/david', renderFile, (req, res) => {
-  res.renderFile('david');
+server.get('/david', prepFileToSend, (req, res) => {
+  res.fileToShow('david');
 });
 
 server.listen(8080, () => {

@@ -1,11 +1,11 @@
 const path = require('path');
 
-const renderFile = (req, res, next) => {
-  res.renderFile = (name) => {
+const prepFileToSend = (req, res, next) => {
+  res.fileToShow = (name) => {
     const filePath = path.join(__dirname, `../files/${name}.html`);
     res.sendFile(filePath);
   };
   next();
 };
 
-module.exports = { renderFile };
+module.exports = { prepFileToSend };
