@@ -1,6 +1,9 @@
 const express = require('express');
+const { renderFile } = require('./middleware');
 
 const server = express();
+
+server.use(renderFile);
 
 server.get('/anna', (req, res) => {
   res.send('ANNA with `res.send`');
@@ -12,12 +15,19 @@ server.get('/billy', (req, res) => {
   });
 });
 
+
 server.get('/carlos', (req, res) => {
   res.sendFile('./files/carlos.txt', {root: __dirname})
 });
 
+// old way
+// server.get('/david', (req, res) => {
+//   res.show('./files/david.html');
+// });
+
+// new way
 server.get('/david', (req, res) => {
-  res.sendFile('./files/david.html', {root: __dirname})
+  res.renderFile('david');
 });
 
 server.listen(8080, () => {
