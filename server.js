@@ -16,6 +16,10 @@ server.get('/carlos', (req, res) => {
   res.sendFile('./files/carlos.txt', {root: __dirname})
 });
 
+server.get('/david', (req, res) => {
+  res.sendFile('./files/david.html', {root: __dirname})
+});
+
 server.listen(8080, () => {
   console.log('The server is listening at PORT 8080');
 });
