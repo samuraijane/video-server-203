@@ -22,7 +22,7 @@ server.get('/carlos', (req, res) => {
 
 // old way
 // server.get('/david', (req, res) => {
-//   res.sendFile('./files/david.html');
+//   res.sendFile('./files/david.html', {root: __dirname});
 // });
 
 // new way
