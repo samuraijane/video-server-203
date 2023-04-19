@@ -9,11 +9,29 @@ html {
   height: 100%;
 }
 
+footer {
+  background-color: #999;
+  color: white;
+  padding: 40px 0;
+}
+
+header {
+  background-color: #ccc;
+  padding: 20px 0;
+}
+
 main {
   flex: 1;
+  padding: 20px 0;
+}
+
+.y-wrap {
+  margin: 0 auto;
+  width: 90%;
 }
 
 .y-sticky {
   display: flex;
   flex-direction: column;
+  height: 100%;
 }
