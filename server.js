@@ -3,7 +3,7 @@ const es6Renderer = require('express-es6-template-engine');
 
 const server = express();
 
-server.use('/', express.static(__dirname + "/public"));
+server.use(express.static(__dirname + "/public"));
 
 server.engine('html', es6Renderer);
 server.set('views', 'views');
