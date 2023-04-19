@@ -11,7 +11,9 @@ server.set('view engine', 'html');
 server.get('/', (req, res) => {
   res.render('index', {
     partials: {
-      header: 'partials/header'
+      footer: 'partials/footer',
+      header: 'partials/header',
+      main: 'partials/main'
     }
   });
 });
