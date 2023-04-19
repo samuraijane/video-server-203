@@ -9,7 +9,11 @@ server.set('view engine', 'html');
 
 
 server.get('/', (req, res) => {
-  res.render('index');
+  res.render('index', {
+    partials: {
+      header: 'partials/header'
+    }
+  });
 });
 
 server.get('/heartbeat', (req, res) => {
